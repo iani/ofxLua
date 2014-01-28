@@ -139,6 +139,7 @@
 		025BA44D188ECB3D0022F38A /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
 		025BA44E188ECB3D0022F38A /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
 		025BA453188ED63E0022F38A /* gea-icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "gea-icon.icns"; sourceTree = "<group>"; };
+		02FE78491897B43200C0AE0D /* geaOSC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = geaOSC.h; sourceTree = "<group>"; };
 		3033CE0318794F910027DD2A /* Events.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Events.cpp; sourceTree = "<group>"; };
 		3033CE0618796FD80027DD2A /* 3d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 3d.cpp; sourceTree = "<group>"; };
 		3033CE08187A22C40027DD2A /* Gl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gl.cpp; sourceTree = "<group>"; };
@@ -421,6 +422,7 @@
 				025BA44C188ECB3D0022F38A /* main.cpp */,
 				025BA44D188ECB3D0022F38A /* ofApp.cpp */,
 				025BA44E188ECB3D0022F38A /* ofApp.h */,
+				02FE78491897B43200C0AE0D /* geaOSC.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;

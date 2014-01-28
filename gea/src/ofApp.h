@@ -34,7 +34,7 @@ public:
     void errorReceived(string& msg);
     
     // a bunch of api tests
-    void runTests();
+    //void runTests();
     
     // script control
     void reloadScript();
@@ -60,7 +60,28 @@ public:
     float timers[NUM_MSG_STRINGS];
     string scriptDirectory;
     int scriptID;
-    //******************//
     
-    
+    void testForGeaWrapper(int takis);
 };
+
+//**** geaWrapper ********//
+class geaWrapper {
+    
+public:
+    
+    static void bind(ofxLua& lua) {
+        
+        using namespace luabind;
+        
+        module(lua, "gea")	// create an "of" table namespace
+        [
+         
+         // bind a class
+         class_<ofApp>("gea")
+         .def("set", (void(ofApp::*)(int)) &ofApp::testForGeaWrapper)
+         
+         ];
+    }
+};
+
+//******************//

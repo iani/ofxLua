@@ -45,7 +45,7 @@ void ofApp::setup() {
 	lua.addListener(this);
 	
 	// run some api tests
-	runTests();
+	//runTests();
 	
 	// reinit the lua state, clears test data in state
 	lua.init(true); // true because we want to stop on an error
@@ -77,7 +77,17 @@ void ofApp::update() {
 		ofxOscMessage m;
 		receiver.getNextMessage(&m);
         
-		// check for mouse moved message
+        // GEA SCRIPT READING
+		if(m.getAddress() == "addScript"){
+            scripts.push_back(m.getArgAsString(0));
+            scriptID++;
+            runScript(scriptID);
+            cout << m.getArgAsString(0) << endl;
+		}
+		if(m.getAddress() == "updateScript"){
+            reloadScript();
+		}
+		// Machine Listening
 		if(m.getAddress() == "mlab"){
 			//ampVal = m.getArgAsFloat(1);
             cout << m.getArgAsFloat(1) << endl;
@@ -88,15 +98,7 @@ void ofApp::update() {
             cout << "ok" << endl;
 		}
         
-		if(m.getAddress() == "addScript"){
-            scripts.push_back(m.getArgAsString(0));
-            scriptID++;
-            runScript(scriptID);
-            cout << m.getArgAsString(0) << endl;
-		}
-		if(m.getAddress() == "updateScript"){
-            reloadScript();
-		}
+
 	}
     
     //******************//
@@ -204,217 +206,11 @@ void ofApp::runScript(int scriptID) {
 	lua.doScript(scripts[scriptID]);
 	lua.scriptSetup();
 }
+
+void ofApp::testForGeaWrapper(int takis) {
+    cout << "I am hearing" << endl;
+    
+}
 //******************//
 
-//--------------------------------------------------------------
-void ofApp::runTests() {/*
-                         
-                         // do tests
-                         //------
-                         ofLog();
-                         ofLog() << "*** BEGIN READ TEST ***";
-                         
-                         // load a script with some variables we want
-                         lua.doScript("variableTest.lua");
-                         
-                         // print the variables in the script manually
-                         ofLog() << "variableTest variables:";
-                         ofLog() << "	abool: " << lua.getBool("abool");
-                         ofLog() << "	afloat: " << lua.getFloat("afloat");
-                         ofLog() << "	astring: " << lua.getString("astring");
-                         
-                         // load simple table arrays by type
-                         stringstream line;
-                         
-                         vector<bool> boolTable;
-                         lua.getBoolVector("boolTable", boolTable);
-                         line << "	boolTable: ";
-                         for(int i = 0; i < boolTable.size(); ++i)
-                         line << boolTable[i] << " ";
-                         ofLog() << line.str() << "#: " << lua.tableSize("boolTable");
-                         line.str(""); // clear
-                         
-                         vector<float> floatTable;
-                         lua.getFloatVector("floatTable", floatTable);
-                         line << "	floatTable: ";
-                         for(int i = 0; i < floatTable.size(); ++i)
-                         line << floatTable[i] << " ";
-                         ofLog() << line.str() << "#: " << lua.tableSize("floatTable");
-                         line.str(""); // clear
-                         
-                         vector<string> stringTable;
-                         lua.getStringVector("stringTable", stringTable);
-                         line << "	stringTable: ";
-                         for(int i = 0; i < stringTable.size(); ++i)
-                         line << "\"" << stringTable[i] << "\" ";
-                         ofLog() << line.str() << "#: " << lua.tableSize("stringTable");
-                         line.str(""); // clear
-                         
-                         // try to load a mixed var table, should fail and issue warnings
-                         lua.getStringVector("mixedTable", stringTable);
-                         
-                         // read manually by index, remember lua indices start at 1 not 0!
-                         lua.pushTable("mixedTable");
-                         ofLog() << "mixedTable";
-                         for(int i = 1; i <= lua.tableSize(); ++i) {
-                         if(lua.isBool(i)) {
-                         ofLogNotice() << i << " b: " << lua.getBool(i);
-                         }
-                         else if(lua.isFloat(i)) {
-                         ofLogNotice() << i << " f: " << lua.getFloat(i);
-                         }
-                         else if(lua.isString(i)) {
-                         ofLogNotice() << i << " s: " << lua.getString(i);
-                         }
-                         }
-                         lua.popTable();
-                         
-                         // print the contents of the "atable" table
-                         lua.pushTable("atable"); // move from the global lua namespace to the "atable" table
-                         lua.printTable(); // print variables & tables in "atable"
-                         lua.popTable(); // return to the global namespace
-                         
-                         ofLog() << "*** END READ TEST ***" << endl;
-                         
-                         //------
-                         
-                         ofLog() << "*** BEGIN WRITE TEST ***";
-                         
-                         // print
-                         ofLog() << "values before:";
-                         ofLog() << "	abool: " << lua.getBool("abool");
-                         ofLog() << "	afloat: " << lua.getFloat("afloat");
-                         ofLog() << "	astring: " << lua.getString("astring");
-                         
-                         // this should throw a warning, it dosen't exist yet
-                         ofLog() << "	newstring: " << lua.getString("newstring");
-                         
-                         floatTable.clear();
-                         lua.getFloatVector("floatTable", floatTable);
-                         line << "	floatTable: ";
-                         for(int i = 0; i < floatTable.size(); ++i)
-                         line << floatTable[i] << " ";
-                         ofLog() << line.str() << "#: " << lua.tableSize("floatTable");
-                         line.str(""); // clear
-                         
-                         // set values
-                         lua.setBool("abool", false);
-                         lua.setFloat("afloat", 66.6);
-                         lua.setString("astring", "kaaaaa");
-                         
-                         // add new value
-                         lua.setString("newstring", "a new string");
-                         
-                         // set vector
-                         floatTable.clear();
-                         for(int i = 0; i < 10; i+=2) {
-                         floatTable.push_back(i);
-                         }
-                         lua.setFloatVector("floatTable", floatTable);
-                         
-                         // print again
-                         ofLog() << "values after:";
-                         ofLog() << "	abool: " << lua.getBool("abool");
-                         ofLog() << "	afloat: " << lua.getFloat("afloat");
-                         ofLog() << "	astring: " << lua.getString("astring");
-                         ofLog() << "	newstring: " << lua.getString("newstring");
-                         
-                         floatTable.clear();
-                         lua.getFloatVector("floatTable", floatTable);
-                         line << "	floatTable: ";
-                         for(int i = 0; i < floatTable.size(); ++i)
-                         line << floatTable[i] << " ";
-                         ofLog() << line.str() << "#: " << lua.tableSize("floatTable");
-                         line.str(""); // clear
-                         
-                         // write manually by index, remember lua indices start at 1 not 0!
-                         lua.pushTable("mixedTable");
-                         for(int i = 1; i <= lua.tableSize(); ++i) {
-                         if(lua.isBool(i)) {
-                         lua.setBool(i, true);
-                         }
-                         else if(lua.isFloat(i)) {
-                         lua.getFloat(i, 9999.99);
-                         }
-                         else if(lua.isString(i)) {
-                         lua.getString(i, "abcdefg");
-                         }
-                         }
-                         lua.printTable();
-                         lua.popTable();
-                         
-                         ofLog() << "*** END WRITE TEST ***" << endl;
-                         
-                         //------
-                         
-                         ofLog() << "*** BEGIN EXIST TEST ***";
-                         
-                         // "avar" dosen't exist
-                         ofLog() << "avar exists: " << lua.isFloat("avar")
-                         << ", is nil: " << lua.isNil("avar");
-                         
-                         // "avar" exists and is equal to 99
-                         lua.setFloat("avar", 99);
-                         ofLog() << "avar exists: " << lua.isFloat("avar")
-                         << ", is nil: " << lua.isNil("avar");
-                         ofLog() << "	avar: " << lua.getFloat("avar");
-                         
-                         // set "avar" to nil, it no longer exists
-                         lua.setNil("avar");
-                         ofLog() << "avar exists: " << lua.isFloat("avar")
-                         << ", is nil: " << lua.isNil("avar");
-                         
-                         ofLog() << "*** END EXIST TEST ***" << endl;
-                         
-                         //------
-                         
-                         ofLog() << "*** BEGIN CLEAR TEST ***";
-                         
-                         lua.printTable("anotherTable");
-                         lua.clearTable("anotherTable");
-                         lua.printTable("anotherTable"); // should only print the name
-                         
-                         ofLog() << "*** END CLEAR TEST ***" << endl;
-                         
-                         //------
-                         
-                         ofLog() << "*** BEGIN FILE WRITER TEST ***";
-                         
-                         // write vars out into a text file
-                         ofxLuaFileWriter luaWriter;
-                         string filename = "writerTest.lua";
-                         luaWriter.writeComment("lua writer test");
-                         luaWriter.newLine();
-                         luaWriter.beginCommentBlock();
-                         luaWriter.writeLine("this is a comment block");
-                         luaWriter.endCommentBlock();
-                         luaWriter.writeBool("abool", lua.getBool("abool"));
-                         luaWriter.writeFloat("afloat", lua.getFloat("afloat"));
-                         luaWriter.writeString("astring", lua.getString("astring"));
-                         luaWriter.writeStringVector("stringTable", stringTable);
-                         
-                         // write a table's contents recursively into the file
-                         lua.writeTable("atable", luaWriter, false);
-                         
-                         // save, load, and print file
-                         if(luaWriter.saveToFile(filename)) {
-                         
-                         // print
-                         ofBuffer b = ofBufferFromFile(filename);
-                         while(!b.isLastLine()) {
-                         ofLog() << b.getNextLine();
-                         }
-                         b.clear();
-                         
-                         // try loading into lua state
-                         lua.doScript(filename);
-                         
-                         // delete when done
-                         ofFile::removeFile(filename);
-                         }
-                         
-                         ofLog() << "*** END FILE WRITER TEST ***" << endl;
-                         
-                         //-------
-                         // tests done
-                         */}
+

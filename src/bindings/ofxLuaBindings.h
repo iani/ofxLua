@@ -70,7 +70,7 @@ class ofxLuaBindings {
 				registerUtils(),
 				registerVideo()
 			];
-			
+                        
 			// add some special constants
 			addUtilsConstants(lua);
 		}
