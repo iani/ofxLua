@@ -6,6 +6,7 @@
 //******************//
 //****** GEA *******//
 #include "ofxOsc.h"
+#include "ofxGea.h"
 #define HOST "localhost"
 #define LuaReceiverPort 46100
 #define NUM_MSG_STRINGS 20
@@ -64,24 +65,3 @@ public:
     void testForGeaWrapper(int takis);
 };
 
-//**** geaWrapper ********//
-class geaWrapper {
-    
-public:
-    
-    static void bind(ofxLua& lua) {
-        
-        using namespace luabind;
-        
-        module(lua, "gea")	// create an "of" table namespace
-        [
-         
-         // bind a class
-         class_<ofApp>("gea")
-         .def("set", (void(ofApp::*)(int)) &ofApp::testForGeaWrapper)
-         
-         ];
-    }
-};
-
-//******************//

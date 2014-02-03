@@ -23,6 +23,8 @@
 		025BA450188ECB3D0022F38A /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 025BA44D188ECB3D0022F38A /* ofApp.cpp */; };
 		025BA454188ED9150022F38A /* gea-icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 025BA453188ED63E0022F38A /* gea-icon.icns */; };
 		025BA456188EDBF10022F38A /* gea-icon.icns in CopyFiles */ = {isa = PBXBuildFile; fileRef = 025BA453188ED63E0022F38A /* gea-icon.icns */; };
+		0292357218A01A8B0018B4D8 /* Gea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0292357118A01A8B0018B4D8 /* Gea.cpp */; };
+		0292357718A01B0D0018B4D8 /* ofxGea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0292357518A01B0D0018B4D8 /* ofxGea.cpp */; };
 		2991D66A82B2AF8F0DF2BBFD /* ofxLuaFileWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BCCBA18FA85C5A2A68DC1E5 /* ofxLuaFileWriter.cpp */; };
 		3033CDFE18781B320027DD2A /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30E5CF851876F21E00811072 /* App.cpp */; };
 		3033CDFF18781B320027DD2A /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30E5CF861876F21E00811072 /* Sound.cpp */; };
@@ -139,7 +141,9 @@
 		025BA44D188ECB3D0022F38A /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
 		025BA44E188ECB3D0022F38A /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
 		025BA453188ED63E0022F38A /* gea-icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "gea-icon.icns"; sourceTree = "<group>"; };
-		02FE78491897B43200C0AE0D /* geaOSC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = geaOSC.h; sourceTree = "<group>"; };
+		0292357118A01A8B0018B4D8 /* Gea.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gea.cpp; sourceTree = "<group>"; };
+		0292357518A01B0D0018B4D8 /* ofxGea.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxGea.cpp; sourceTree = "<group>"; };
+		0292357618A01B0D0018B4D8 /* ofxGea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxGea.h; sourceTree = "<group>"; };
 		3033CE0318794F910027DD2A /* Events.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Events.cpp; sourceTree = "<group>"; };
 		3033CE0618796FD80027DD2A /* 3d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 3d.cpp; sourceTree = "<group>"; };
 		3033CE08187A22C40027DD2A /* Gl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gl.cpp; sourceTree = "<group>"; };
@@ -329,6 +333,7 @@
 		30E5CF831876F21E00811072 /* bindings */ = {
 			isa = PBXGroup;
 			children = (
+				0292357118A01A8B0018B4D8 /* Gea.cpp */,
 				3033CE0618796FD80027DD2A /* 3d.cpp */,
 				30E5CF851876F21E00811072 /* App.cpp */,
 				3033CE0318794F910027DD2A /* Events.cpp */,
@@ -422,7 +427,8 @@
 				025BA44C188ECB3D0022F38A /* main.cpp */,
 				025BA44D188ECB3D0022F38A /* ofApp.cpp */,
 				025BA44E188ECB3D0022F38A /* ofApp.h */,
-				02FE78491897B43200C0AE0D /* geaOSC.h */,
+				0292357518A01B0D0018B4D8 /* ofxGea.cpp */,
+				0292357618A01B0D0018B4D8 /* ofxGea.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -566,6 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0292357218A01A8B0018B4D8 /* Gea.cpp in Sources */,
 				3033CE09187A22C40027DD2A /* Gl.cpp in Sources */,
 				025BA449188ECB0A0022F38A /* OscTypes.cpp in Sources */,
 				025BA440188ECB0A0022F38A /* ofxOscParameterSync.cpp in Sources */,
@@ -582,6 +589,7 @@
 				025BA447188ECB0A0022F38A /* OscPrintReceivedElements.cpp in Sources */,
 				3033CE0218781B320027DD2A /* Utils.cpp in Sources */,
 				025BA43E188ECB0A0022F38A /* ofxOscBundle.cpp in Sources */,
+				0292357718A01B0D0018B4D8 /* ofxGea.cpp in Sources */,
 				3033CE0718796FD80027DD2A /* 3d.cpp in Sources */,
 				025BA448188ECB0A0022F38A /* OscReceivedElements.cpp in Sources */,
 				025BA43F188ECB0A0022F38A /* ofxOscMessage.cpp in Sources */,

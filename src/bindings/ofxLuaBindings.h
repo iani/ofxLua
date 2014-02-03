@@ -25,6 +25,7 @@ namespace bindings {
 	luabind::scope registerSound();
 	luabind::scope registerTypes();
 	luabind::scope registerUtils();
+	luabind::scope registerGea();
 	luabind::scope registerVideo();
 
 	void addUtilsConstants(lua_State *L);
@@ -68,6 +69,7 @@ class ofxLuaBindings {
 				registerSound(),
 				registerTypes(),
 				registerUtils(),
+				registerGea(),
 				registerVideo()
 			];
                         

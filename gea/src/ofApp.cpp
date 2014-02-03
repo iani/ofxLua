@@ -207,7 +207,7 @@ void ofApp::runScript(int scriptID) {
 	lua.scriptSetup();
 }
 
-void ofApp::testForGeaWrapper(int takis) {
+void ofApp::testForGeaWrapper(int talis) {
     cout << "I am hearing" << endl;
     
 }
