@@ -10,7 +10,13 @@
  */
 #include "ofApp.h"
 
+
 //--------------------------------------------------------------
+
+void ofApp::test() {
+    cout << "sdfgdsgsdggsd" << endl;
+}
+
 void ofApp::setup() {
     
     //******************//
@@ -87,20 +93,19 @@ void ofApp::update() {
 		if(m.getAddress() == "updateScript"){
             reloadScript();
 		}
+        
 		// Machine Listening
 		if(m.getAddress() == "mlab"){
-			//ampVal = m.getArgAsFloat(1);
-            cout << m.getArgAsFloat(1) << endl;
+            if (m.getArgAsString(0) == "amp") {
+                amplitude = m.getArgAsFloat(1);
+            }
+
 		}
-        
 		if(m.getAddress() == "test"){
             reloadScript();
             cout << "ok" << endl;
 		}
-        
-
 	}
-    
     //******************//
     
 	// call the script's update() function
@@ -206,11 +211,9 @@ void ofApp::runScript(int scriptID) {
 	lua.doScript(scripts[scriptID]);
 	lua.scriptSetup();
 }
-
-void ofApp::testForGeaWrapper(int talis) {
-    cout << "I am hearing" << endl;
-    
-}
 //******************//
 
 
+float ofApp::amp() {
+    return amplitude;
+}

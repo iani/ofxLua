@@ -62,6 +62,10 @@ public:
     string scriptDirectory;
     int scriptID;
     
-    void testForGeaWrapper(int takis);
+    float mlab[100];
+    void test();
+    float amp();
+    float amplitude;
+    
 };
 

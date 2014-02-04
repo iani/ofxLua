@@ -8,6 +8,7 @@
  * See https://github.com/igoumninja/ofxLua branch gea for documentation
  *
  */
+#include "ofApp.h"
 #include "ofxGea.h"
 #include "ofxLua.h"
 
@@ -28,7 +29,15 @@ luabind::scope registerGea() {
                 .def(constructor<>())
                 
 //                .def("test", &test)
+                .def("setup", (void(ofxGea::*)()) &ofxGea::setup)
+                .def("update", (void(ofxGea::*)()) &ofxGea::update)
                 .def("test", (void(ofxGea::*)()) &ofxGea::test)
+                .def("takis", (int(ofxGea::*)()) &ofxGea::takis),
+    
+            class_<ofApp>("app")
+                .def(constructor<>())
+                .def("test", (void(ofApp::*)()) &ofApp::test)
+                .def("amp", (float(ofApp::*)()) &ofApp::amp)
 
     ;
     
