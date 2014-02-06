@@ -10,6 +10,7 @@
  */
 #include "ofApp.h"
 #include "ofxGea.h"
+#include "ofxMidiLua.h"
 #include "ofxLua.h"
 
 //#include <luabind/operator.hpp>
@@ -33,7 +34,14 @@ luabind::scope registerGea() {
                 .def("update", (void(ofxGea::*)()) &ofxGea::update)
                 .def("test", (void(ofxGea::*)()) &ofxGea::test)
                 .def("takis", (int(ofxGea::*)()) &ofxGea::takis),
-    
+
+            class_<ofxMidiLua>("midi")
+                .def(constructor<>())
+                .def("setup", (void(ofxMidiLua::*)()) &ofxMidiLua::setup)
+                .def("update", (void(ofxMidiLua::*)()) &ofxMidiLua::update)
+                .def("init", (void(ofxMidiLua::*)(int, float)) &ofxMidiLua::init)
+                .def("map", (float(ofxMidiLua::*)(int, float, float)) &ofxMidiLua::map),
+
             class_<ofApp>("app")
                 .def(constructor<>())
                 .def("test", (void(ofApp::*)()) &ofApp::test)
