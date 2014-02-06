@@ -3,9 +3,9 @@ local count=0
 midi = of.midi()
 ----------------------------------------------------
 function setup()
-	of.setWindowTitle("liveCoding_1")
+	of.setWindowTitle("superformula")
         midi:setup()
---        of.background(0)
+        of.background(0)
 
 end
 ----------------------------------------------------
@@ -18,8 +18,6 @@ function draw()
       of.fill()
       of.setColor(0,0,30,midi:map(19,0,255))
       of.rect(0,0,of.getWidth(), of.getHeight())
-      print(midi:map(21,0,1))
---      if midi:map(2
       --sinEq()
       superformula()
       count=count+1
@@ -46,7 +44,7 @@ function superformula()
    of.beginShape();
    for i= 1 , 250 do
       -- test with a=b=1,m=3,n1=5,n2=18,n3=18
-      local a=1
+      local a=2
       local b=1
       local m = midi:map(1,0,10)--3
       local n1 = midi:map(2,0,10)--3

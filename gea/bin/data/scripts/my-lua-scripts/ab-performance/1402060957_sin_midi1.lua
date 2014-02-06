@@ -23,8 +23,8 @@ function draw()
       local samples = {}
       of.beginShape()
       for i = 0, 800 do
-          local a = (math.TWO_PI/100)*i;
-          samples[i]=300*math.cos(10*math.sin(count*0.1)*math.sin(5*a*midi:map(1,0,20)));
+          local a = (3.14/100)*i;
+          samples[i]=300*math.cos(10*math.sin(count*0.1)*math.sin(5*a*midi:map(1,0,5)));
           of.vertex(400 + math.sin(count)*samples[i],i*2)
       end
       of.endShape(false)
