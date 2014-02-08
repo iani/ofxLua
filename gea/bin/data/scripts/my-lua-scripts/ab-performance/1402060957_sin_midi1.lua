@@ -22,9 +22,9 @@ function draw()
       of.setColor(255,255,250,220)
       local samples = {}
       of.beginShape()
-      for i = 0, 800 do
+      for i = 0, of.getHeight()/2 do
           local a = (3.14/100)*i;
-          samples[i]=300*math.cos(10*math.sin(count*0.1)*math.sin(5*a*midi:map(1,0,5)));
+          samples[i]=300*math.cos(10*math.sin(count*10.1)*math.sin(5*a*midi:map(1,0,0.5)));
           of.vertex(400 + math.sin(count)*samples[i],i*2)
       end
       of.endShape(false)

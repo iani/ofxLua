@@ -28,7 +28,7 @@ function sinEq(xPos,speed,amp,freq)
    local samples = {}
    of.beginShape()
    for i = 0, 100 do
-      local a = (math.TWO_PI/2)*i;
+      local a = (3.14/2)*i;
       samples[i]=amp*math.cos(math.sin(freq*a));
           of.vertex(
              xPos + math.sin(of.getFrameNum()*speed)*samples[i],

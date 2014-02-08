@@ -1,5 +1,5 @@
 -- 5 min by AB
-local speed = 200/1000;
+local speed = 2/1000;
 ----------------------------------------------------
 function setup()
    of.setWindowTitle("patterns")

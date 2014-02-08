@@ -13,7 +13,7 @@ function draw()
    of.setColor(0,0,0,10)
    of.rect(0,0,of.getWidth(), of.getHeight())
    for j=1,200 do
-      for i=1,10 do
+      for i=1,100 do
          of.fill()
          if i%2==0 then
             of.setColor(255,255,255,50)

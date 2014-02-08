@@ -1,10 +1,10 @@
 local speed = 0.01
-local amp = 100
-local freq = 0.3
+local amp = 50
+local freq = 1.8
 ----------------------------------------------------
 function setup()
 	of.setWindowTitle("sinEq")
-        of.background(0)
+        --of.background(0)
 end
 ----------------------------------------------------
 function update()
@@ -23,7 +23,7 @@ function sinEq()
    local samples = {}
    of.beginShape()
    for i = 0, 500 do
-      local a = (13.14/100)*2*i;
+      local a = (3.14/100)*2*i;
       samples[i]=amp*math.cos(math.sin(freq*a));
           of.vertex(
              of.getWidth()/2 + 10*math.sin(of.getFrameNum()*speed)*samples[i],

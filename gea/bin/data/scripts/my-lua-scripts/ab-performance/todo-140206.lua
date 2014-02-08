@@ -1,4 +1,4 @@
---http://p5art.tumblr.com/post/75170301999/jd001-rotating-squares-so-im-taking-joshua
+--http://tequibo.tumblr.com/post/75745412208/1-1
 
 local r,g,b,a=0,0,0,10
 function setup()

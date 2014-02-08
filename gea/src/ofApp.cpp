@@ -38,7 +38,7 @@ void ofApp::setup() {
 	ofSetVerticalSync(true);
 	ofSetLogLevel("ofxLua", OF_LOG_VERBOSE);
     
-    scripts.push_back("/Users/ari/Tools/openFrameworks/repository/of_v0.8.0_osx_release/addons/ofxLua/ofGea_140116/src/lua-scripts/00-empty.lua");
+    scripts.push_back("/Users/ari/Tools/openFrameworks/repository/openFrameworks/addons/ofxLua/gea/bin/data/scripts/my-lua-scripts/startup.lua");
 	currentScript = 0;
 
     //******************//
