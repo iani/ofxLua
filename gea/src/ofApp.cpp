@@ -21,7 +21,6 @@ void ofApp::setup() {
     
     //******************//
     //****** GEA *******//
-    mapping.setupMapping();
     ofSetBackgroundAuto(false);
     ofEnableSmoothing();
     ofEnableAlphaBlending();
@@ -106,8 +105,6 @@ void ofApp::update() {
             cout << "ok" << endl;
 		}
 	}
-    mapping.updateMapping();
-    mapping.loadMappingPoints();
     //******************//
     
 	// call the script's update() function
@@ -118,9 +115,6 @@ void ofApp::update() {
 //--------------------------------------------------------------
 void ofApp::draw() {
     
-    //*****GEA*****
-    mapping.drawMapping();
-    //**************
 	// call the script's draw() function
 	lua.scriptDraw();
 }
