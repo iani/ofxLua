@@ -5,8 +5,10 @@
 
 //******************//
 //****** GEA *******//
+#include "geaConstants.h"
 #include "ofxOsc.h"
 #include "ofxGea.h"
+#include "geaMapping.h"
 #define HOST "localhost"
 #define LuaReceiverPort 46100
 #define NUM_MSG_STRINGS 20
@@ -66,6 +68,8 @@ public:
     void test();
     float amp();
     float amplitude;
+    
+    ofxGeaMapping mapping;
     
 };
 

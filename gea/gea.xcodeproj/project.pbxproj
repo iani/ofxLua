@@ -36,6 +36,12 @@
 		02BFECFD18A3672C002F1D2C /* RtMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 02BFECF318A3672C002F1D2C /* RtMidi.cpp */; };
 		02BFECFE18A3672C002F1D2C /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BFECF518A3672C002F1D2C /* CoreMIDI.framework */; };
 		02BFED0118A36891002F1D2C /* ofxMidiLua.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 02BFECFF18A36891002F1D2C /* ofxMidiLua.cpp */; };
+		02F02E8C18A69E1F0066F48F /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 02F02E8518A69E1F0066F48F /* ofxXmlSettings.cpp */; };
+		02F02E8D18A69E1F0066F48F /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 02F02E8818A69E1F0066F48F /* tinyxml.cpp */; };
+		02F02E8E18A69E1F0066F48F /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 02F02E8A18A69E1F0066F48F /* tinyxmlerror.cpp */; };
+		02F02E8F18A69E1F0066F48F /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 02F02E8B18A69E1F0066F48F /* tinyxmlparser.cpp */; };
+		02F02E9B18A69F800066F48F /* matrixAreas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 02F02E9918A69F800066F48F /* matrixAreas.cpp */; };
+		02F02E9E18A6A0C20066F48F /* geaMapping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 02F02E9C18A6A0C20066F48F /* geaMapping.cpp */; };
 		2991D66A82B2AF8F0DF2BBFD /* ofxLuaFileWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BCCBA18FA85C5A2A68DC1E5 /* ofxLuaFileWriter.cpp */; };
 		3033CDFE18781B320027DD2A /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30E5CF851876F21E00811072 /* App.cpp */; };
 		3033CDFF18781B320027DD2A /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30E5CF861876F21E00811072 /* Sound.cpp */; };
@@ -179,6 +185,17 @@
 		02BFECF518A3672C002F1D2C /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = ../../../../../../../../../System/Library/Frameworks/CoreMIDI.framework; sourceTree = "<group>"; };
 		02BFECFF18A36891002F1D2C /* ofxMidiLua.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMidiLua.cpp; sourceTree = "<group>"; };
 		02BFED0018A36891002F1D2C /* ofxMidiLua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMidiLua.h; sourceTree = "<group>"; };
+		02F02E8518A69E1F0066F48F /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
+		02F02E8618A69E1F0066F48F /* ofxXmlSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
+		02F02E8818A69E1F0066F48F /* tinyxml.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
+		02F02E8918A69E1F0066F48F /* tinyxml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
+		02F02E8A18A69E1F0066F48F /* tinyxmlerror.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
+		02F02E8B18A69E1F0066F48F /* tinyxmlparser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
+		02F02E9918A69F800066F48F /* matrixAreas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = matrixAreas.cpp; sourceTree = "<group>"; };
+		02F02E9A18A69F800066F48F /* matrixAreas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrixAreas.h; sourceTree = "<group>"; };
+		02F02E9C18A6A0C20066F48F /* geaMapping.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = geaMapping.cpp; sourceTree = "<group>"; };
+		02F02E9D18A6A0C20066F48F /* geaMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geaMapping.h; sourceTree = "<group>"; };
+		02F02E9F18A6A3B30066F48F /* geaConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = geaConstants.h; sourceTree = "<group>"; };
 		3033CE0318794F910027DD2A /* Events.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Events.cpp; sourceTree = "<group>"; };
 		3033CE0618796FD80027DD2A /* 3d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 3d.cpp; sourceTree = "<group>"; };
 		3033CE08187A22C40027DD2A /* Gl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gl.cpp; sourceTree = "<group>"; };
@@ -411,6 +428,37 @@
 			path = rtmidi;
 			sourceTree = "<group>";
 		};
+		02F02E8318A69E1F0066F48F /* ofxXmlSettings */ = {
+			isa = PBXGroup;
+			children = (
+				02F02E8418A69E1F0066F48F /* src */,
+				02F02E8718A69E1F0066F48F /* libs */,
+			);
+			name = ofxXmlSettings;
+			sourceTree = "<group>";
+		};
+		02F02E8418A69E1F0066F48F /* src */ = {
+			isa = PBXGroup;
+			children = (
+				02F02E8518A69E1F0066F48F /* ofxXmlSettings.cpp */,
+				02F02E8618A69E1F0066F48F /* ofxXmlSettings.h */,
+			);
+			name = src;
+			path = ../../ofxXmlSettings/src;
+			sourceTree = "<group>";
+		};
+		02F02E8718A69E1F0066F48F /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				02F02E8818A69E1F0066F48F /* tinyxml.cpp */,
+				02F02E8918A69E1F0066F48F /* tinyxml.h */,
+				02F02E8A18A69E1F0066F48F /* tinyxmlerror.cpp */,
+				02F02E8B18A69E1F0066F48F /* tinyxmlparser.cpp */,
+			);
+			name = libs;
+			path = ../../ofxXmlSettings/libs;
+			sourceTree = "<group>";
+		};
 		13ED62F0CD3B889287749715 /* ofxLua */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,6 +500,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				02F02E8318A69E1F0066F48F /* ofxXmlSettings */,
 				02BFECC718A3672C002F1D2C /* ofxMidi */,
 				025BA413188ECB0A0022F38A /* ofxOsc */,
 				13ED62F0CD3B889287749715 /* ofxLua */,
@@ -532,6 +581,11 @@
 				0292357618A01B0D0018B4D8 /* ofxGea.h */,
 				02BFECFF18A36891002F1D2C /* ofxMidiLua.cpp */,
 				02BFED0018A36891002F1D2C /* ofxMidiLua.h */,
+				02F02E9C18A6A0C20066F48F /* geaMapping.cpp */,
+				02F02E9D18A6A0C20066F48F /* geaMapping.h */,
+				02F02E9F18A6A3B30066F48F /* geaConstants.h */,
+				02F02E9918A69F800066F48F /* matrixAreas.cpp */,
+				02F02E9A18A69F800066F48F /* matrixAreas.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -683,10 +737,13 @@
 				025BA445188ECB0A0022F38A /* UdpSocket.cpp in Sources */,
 				3033CDFE18781B320027DD2A /* App.cpp in Sources */,
 				02BFECFA18A3672C002F1D2C /* ofxMidiIn.cpp in Sources */,
+				02F02E8E18A69E1F0066F48F /* tinyxmlerror.cpp in Sources */,
 				3033CDFF18781B320027DD2A /* Sound.cpp in Sources */,
 				025BA446188ECB0A0022F38A /* OscOutboundPacketStream.cpp in Sources */,
 				025BA441188ECB0A0022F38A /* ofxOscReceiver.cpp in Sources */,
 				3033CE0018781B320027DD2A /* Graphics.cpp in Sources */,
+				02F02E9B18A69F800066F48F /* matrixAreas.cpp in Sources */,
+				02F02E8F18A69E1F0066F48F /* tinyxmlparser.cpp in Sources */,
 				02BFED0118A36891002F1D2C /* ofxMidiLua.cpp in Sources */,
 				02BFECF718A3672C002F1D2C /* ofxRtMidiOut.cpp in Sources */,
 				02BFECF918A3672C002F1D2C /* ofxMidi.cpp in Sources */,
@@ -694,9 +751,12 @@
 				025BA450188ECB3D0022F38A /* ofApp.cpp in Sources */,
 				025BA442188ECB0A0022F38A /* ofxOscSender.cpp in Sources */,
 				3033CE0118781B320027DD2A /* Math.cpp in Sources */,
+				02F02E8D18A69E1F0066F48F /* tinyxml.cpp in Sources */,
+				02F02E9E18A6A0C20066F48F /* geaMapping.cpp in Sources */,
 				025BA447188ECB0A0022F38A /* OscPrintReceivedElements.cpp in Sources */,
 				02BFECFC18A3672C002F1D2C /* ofxMidiOut.cpp in Sources */,
 				02BFECFD18A3672C002F1D2C /* RtMidi.cpp in Sources */,
+				02F02E8C18A69E1F0066F48F /* ofxXmlSettings.cpp in Sources */,
 				3033CE0218781B320027DD2A /* Utils.cpp in Sources */,
 				025BA43E188ECB0A0022F38A /* ofxOscBundle.cpp in Sources */,
 				0292357718A01B0D0018B4D8 /* ofxGea.cpp in Sources */,
