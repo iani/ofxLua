@@ -10,12 +10,8 @@
  */
 #include "ofApp.h"
 
-
+//ofApp* getApp() {return (ofApp*) ofGetAppPtr();}
 //--------------------------------------------------------------
-
-void ofApp::test() {
-    cout << "sdfgdsgsdggsd" << endl;
-}
 
 void ofApp::setup() {
     
@@ -217,4 +213,5 @@ void ofApp::runScript(int scriptID) {
 
 float ofApp::amp() {
     return amplitude;
+//    return ofGetFrameNum();
 }

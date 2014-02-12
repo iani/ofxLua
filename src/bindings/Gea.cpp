@@ -13,7 +13,8 @@
 #include "ofxMidiLua.h"
 #include "ofxLua.h"
 
-//#include <luabind/operator.hpp>
+// get global app pointer and cast type to your custom ofApp
+ofApp* getApp() {return (ofApp*) ofGetAppPtr();}
 
 namespace bindings {
 
@@ -25,15 +26,12 @@ luabind::scope registerGea() {
         
             ///////////////////////////////
             /// \section geaOSC.h
-            
+    
             class_<ofxGea>("gea")
                 .def(constructor<>())
-                
-//                .def("test", &test)
                 .def("setup", (void(ofxGea::*)()) &ofxGea::setup)
-                .def("update", (void(ofxGea::*)()) &ofxGea::update)
-                .def("test", (void(ofxGea::*)()) &ofxGea::test)
-                .def("takis", (int(ofxGea::*)()) &ofxGea::takis),
+                .def("update", (void(ofxGea::*)()) &ofxGea::update),
+                //.def("amp", (float(ofxGea::*)()) &ofxGea::amp),
 
             class_<ofxMidiLua>("midi")
                 .def(constructor<>())
@@ -41,11 +39,18 @@ luabind::scope registerGea() {
                 .def("update", (void(ofxMidiLua::*)()) &ofxMidiLua::update)
                 .def("init", (void(ofxMidiLua::*)(int, float)) &ofxMidiLua::init)
                 .def("map", (float(ofxMidiLua::*)(int, float, float)) &ofxMidiLua::map),
-
+    
+            // get global app instance
+            def("getApp", &getApp),
+    
             class_<ofApp>("app")
                 .def(constructor<>())
-                .def("test", (void(ofApp::*)()) &ofApp::test)
-                .def("amp", (float(ofApp::*)()) &ofApp::amp)
+                //.def("amp", &ofApp::amp)
+                .property("amp", &ofApp::amplitude) // readonly property
+//                .def("test", (void(ofApp::*)()) &ofApp::test)
+//                .def("getApp", &getApp)
+//                .def("amp", (float(ofApp::*)()) &ofApp::amp)
+                //.def("getApp", &getopt)
 
     ;
     

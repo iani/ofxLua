@@ -3,14 +3,13 @@ takis = of.gea()
 function setup()
    of.setWindowTitle("adf")
    of.background(0)
-   takis:test()
    takis:setup()
 end
 ----------------------------------------------------
 function update()
-   takis:update()
+--   takis:update()
    --takis:amp()
-   print(2345)
+   --print(
 --   print(takis:amp())
    
 end

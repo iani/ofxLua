@@ -63,7 +63,6 @@ public:
     int scriptID;
     
     float mlab[100];
-    void test();
     float amp();
     float amplitude;
     

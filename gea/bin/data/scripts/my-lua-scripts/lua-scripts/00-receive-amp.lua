@@ -1,4 +1,4 @@
-gea = of.app()
+mygea = of.getApp()
 
 function setup()
    of.setWindowTitle("adf")
@@ -7,7 +7,7 @@ end
 ----------------------------------------------------
 function update()
    
-   print(gea:amp())
+   print(mygea:amp())
 
 end
 ----------------------------------------------------
@@ -17,8 +17,3 @@ function draw()
    of.rect(100,0,of.getWidth(), of.getHeight())
 end
 ----------------------------------------------------
-function keyPressed(key)
-   if key == string.byte("s") then
-      print(gea:amp())
-   end
-end
