@@ -12,6 +12,7 @@
 
 #include "ofMain.h"
 #include "ofxLua.h"
+//#include "Osc.h"
 
 // hide everything in a namespace
 namespace bindings {
@@ -69,7 +70,7 @@ class ofxLuaBindings {
 				registerSound(),
 				registerTypes(),
 				registerUtils(),
-				registerGea(),
+                registerGea(),
 				registerVideo()
 			];
                         

@@ -46,8 +46,6 @@ public:
     vector<string> scripts;
     int currentScript;
     
-    
-    
     //******************//
     //****** GEA *******//
 

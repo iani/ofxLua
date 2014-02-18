@@ -40,18 +40,10 @@ luabind::scope registerGea() {
                 .def("init", (void(ofxMidiLua::*)(int, float)) &ofxMidiLua::init)
                 .def("map", (float(ofxMidiLua::*)(int, float, float)) &ofxMidiLua::map),
     
-            // get global app instance
-            def("getApp", &getApp),
     
             class_<ofApp>("app")
                 .def(constructor<>())
-                //.def("amp", &ofApp::amp)
-                .property("amp", &ofApp::amplitude) // readonly property
-//                .def("test", (void(ofApp::*)()) &ofApp::test)
-//                .def("getApp", &getApp)
-//                .def("amp", (float(ofApp::*)()) &ofApp::amp)
-                //.def("getApp", &getopt)
-
+                .def("amp", (float(ofApp::*)()) &ofApp::amp)
     ;
     
 }

@@ -1,4 +1,4 @@
-mygea = of.app()
+ampq = of.app()
 
 function setup()
    of.setWindowTitle("adf")
@@ -7,7 +7,7 @@ end
 ----------------------------------------------------
 function update()
    
-   print(mygea:amp())
+   print(ampq:amp())
 
 end
 ----------------------------------------------------
