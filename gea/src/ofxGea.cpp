@@ -15,7 +15,7 @@ void ofxGea::setup(){
 //	current_msg_string = 0;
     
 }
-void ofxGea::update(){
+    void ofxGea::update(){
     //******************//
     //****** GEA *******//
 //    for(int i = 0; i < NUM_MSG_STRINGS; i++){

@@ -63,6 +63,10 @@ public:
     float mlab[100];
     float amp();
     float amplitude;
+    float freq();
+    float frequency;
+    bool onset();
+    bool onsetBool;
     
     
 };

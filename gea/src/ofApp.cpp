@@ -66,6 +66,9 @@ void ofApp::update() {
     
     //******************//
     //****** GEA *******//
+    
+    onsetBool = false;
+    
     for(int i = 0; i < NUM_MSG_STRINGS; i++){
 		if(timers[i] < ofGetElapsedTimef()){
 			msg_strings[i] = "";
@@ -94,11 +97,15 @@ void ofApp::update() {
             if (m.getArgAsString(0) == "amp") {
                 amplitude = m.getArgAsFloat(1);
             }
-
-		}
-		if(m.getAddress() == "test"){
-            reloadScript();
-            cout << "ok" << endl;
+            if (m.getArgAsString(0) == "freq") {
+                //cout << m.getArgAsFloat(1) << endl;
+                frequency = m.getArgAsFloat(1);
+            }
+            if (m.getArgAsString(0) == "onset") {
+                //cout << onsetBool << endl;
+                onsetBool = true;
+                //cout << onsetBool << endl;
+            }
 		}
 	}
     //******************//
@@ -214,5 +221,10 @@ void ofApp::runScript(int scriptID) {
 
 float ofApp::amp() {
     return amplitude;
-//    return ofGetFrameNum();
+}
+float ofApp::freq() {
+    return frequency;
+}
+bool ofApp::onset() {
+    return onsetBool;
 }

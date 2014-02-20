@@ -1,8 +1,13 @@
 --http://tequibo.tumblr.com/post/75745412208/1-1
 
-local r,g,b,a=0,0,0,10
+batang = of.Font()
+
+
+
+local r,g,b,a=0,0,0,100
 function setup()
    of.setWindowTitle("liveCoding_1")
+   batang:loadFont("/Users/ari/Media/fonts/favorites/Batang.ttf", 11, false, true)
 end
 ----------------------------------------------------
 function update()
@@ -14,26 +19,17 @@ function draw()
    of.setColor(r,g,b,a)
    of.rect(0,0,of.getWidth(), of.getHeight())
 
+
    of.noFill()
    of.setColor(255,255,255,200)
-   
-   of.pushMatrix()
-   of.translate(of.getWidth()/2+100, of.getHeight()/2, 0)
-   of.rotateZ(of.getFrameNum())
-   of.rect(0,0,100,100)
-   of.popMatrix()
 
-   of.pushMatrix()
-   of.translate(of.getWidth()/2+200, of.getHeight()/2, 0)
-   of.rotateZ(of.getFrameNum())
-   of.rect(0,0,100,100)
-   of.popMatrix()
-
-   of.pushMatrix()
-   of.translate(of.getWidth()/2+400, of.getHeight()/2, 0)
-   of.rotateZ(-of.getFrameNum())
-   of.rect(0,0,100,100)
-   of.popMatrix()
+   for i=0,40 do
+      batang:drawString(
+         tostring(of.getFrameNum()),
+         50*i,
+         of.getWidth()/2+100*(math.sin(of.getFrameNum()*i/100))
+      )   
+   end
 
 end
 ----------------------------------------------------
