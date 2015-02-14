@@ -16,6 +16,7 @@
 // hide everything in a namespace
 namespace bindings {
 
+    luabind::scope registerGea();
 	luabind::scope register3d();
 	luabind::scope registerApp();
 	luabind::scope registerEvents();
@@ -58,7 +59,8 @@ class ofxLuaBindings {
 			// since there are alot of functions and classes to wrap,
 			// the bindings are implemented in individual cpp files
 			luabind::module(lua, "of") [
-				register3d(),
+                registerGea(),
+                register3d(),
 				registerApp(),
 				registerEvents(),
 				registerGl(),
